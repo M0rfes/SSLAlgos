@@ -12,18 +12,18 @@ def ceasar(msg, key):
     return msg.translate(upper.maketrans(string.ascii_uppercase, upper)).translate(lower.maketrans(string.ascii_lowercase, lower))
 
 
-def encrypt(pt, key):
+def decrypt(pt, key):
     return ceasar(pt, key)
 
 
-def decrypt(ct, key):
+def encrypt(ct, key):
     if key > 0:
         key = -key
     return ceasar(ct, key)
 
 
-ptext = input('Enter the text to encrypt')
-key = int(input('Enter the key'))
+ptext = input('Enter the text to encrypt\n')
+key = int(input('Enter the key\n'))
 ctext = encrypt(ptext, key)
 print(ctext)
 print(decrypt(ctext, key))
